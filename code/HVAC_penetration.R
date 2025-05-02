@@ -372,11 +372,5 @@ hvac_state_table %>%
   labs(title = "Texas: Total Electricity Demand (GWh)", y = "Demand (GWh)", x = NULL) +
   theme_minimal()
 
-# Join and compute additional demand
-hvac_state_additional <- hvac_state_table %>%
-  left_join(baseline, by = 'NAME') %>%
-  mutate(addl_demand_gwh = demand_gwh - base_demand,
-         addl_pop = pop - base_pop)
-
 
 
